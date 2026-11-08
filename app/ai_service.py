@@ -2,7 +2,7 @@ import os
 from statistics import mean
 
 def analizar_rendimiento(estudiante, notas):
-    """Usa Gemini si existe una API key; si no, ofrece un análisis local básico."""
+    """Usa Gemini  API key; , ofrece un análisis local básico."""
     valores = [float(n.nota) for n in notas]
     if not valores:
         return "Este estudiante todavía no tiene calificaciones registradas. Registre evaluaciones para generar un análisis."
