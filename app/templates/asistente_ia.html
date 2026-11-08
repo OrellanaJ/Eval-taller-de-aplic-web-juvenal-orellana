@@ -1,0 +1,25 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container">
+  <h2><i class="fa fa-robot"></i> Asistente de rendimiento académico</h2>
+  <p>Seleccione un estudiante para analizar sus calificaciones registradas.</p>
+  <form method="post">
+    <div class="form-group">
+      <label for="estudiante_id">Estudiante</label>
+      <select class="form-control" id="estudiante_id" name="estudiante_id" required>
+        <option value="">-- Seleccione --</option>
+        {% for e in estudiantes %}
+        <option value="{{ e.id }}" {% if estudiante_id == e.id %}selected{% endif %}>
+          {{ e.codigo }} - {{ e.apellidos }}, {{ e.nombres }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+    <br><button class="btn btn-primary" type="submit">Analizar rendimiento</button>
+  </form>
+  {% if resultado %}
+  <hr><h3>Resultado del análisis</h3>
+  <div class="well" style="white-space: pre-line">{{ resultado }}</div>
+  {% endif %}
+</div>
+{% endblock %}

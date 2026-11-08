@@ -1,0 +1,8 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container"><h2>Reporte 2: Rendimiento por estudiante</h2>
+<table class="table table-striped table-bordered">
+<thead><tr><th>Código</th><th>Nombres</th><th>Apellidos</th><th>Promedio</th><th>Evaluaciones</th></tr></thead>
+<tbody>{% for r in filas %}<tr><td>{{ r.codigo }}</td><td>{{ r.nombres }}</td><td>{{ r.apellidos }}</td><td>{{ "%.2f"|format(r.promedio or 0) }}</td><td>{{ r.evaluaciones }}</td></tr>{% else %}<tr><td colspan="5">No existen calificaciones registradas.</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endblock %}

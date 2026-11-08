@@ -1,0 +1,10 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container">
+<h2>Reporte 1: Resumen general</h2>
+<div class="row">
+  <div class="col-md-4"><div class="panel panel-primary"><div class="panel-heading">Estudiantes</div><div class="panel-body"><h2>{{ total_estudiantes }}</h2></div></div></div>
+  <div class="col-md-4"><div class="panel panel-success"><div class="panel-heading">Materias</div><div class="panel-body"><h2>{{ total_materias }}</h2></div></div></div>
+  <div class="col-md-4"><div class="panel panel-info"><div class="panel-heading">Docentes</div><div class="panel-body"><h2>{{ total_docentes }}</h2></div></div></div>
+</div></div>
+{% endblock %}

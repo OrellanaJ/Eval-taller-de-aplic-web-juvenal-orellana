@@ -1,0 +1,8 @@
+{% extends "appbuilder/base.html" %}
+{% block content %}
+<div class="container"><h2>Reporte 3: Inscripciones por materia y periodo</h2>
+<table class="table table-striped table-bordered">
+<thead><tr><th>Materia</th><th>Periodo</th><th>Total inscritos</th></tr></thead>
+<tbody>{% for r in filas %}<tr><td>{{ r.nombre }}</td><td>{{ r.periodo }}</td><td>{{ r.cantidad }}</td></tr>{% else %}<tr><td colspan="3">No existen inscripciones registradas.</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endblock %}
